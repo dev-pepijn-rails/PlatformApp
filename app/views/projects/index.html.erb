@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Projecten</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Land</th>
+      <th>Plaats</th>
+      <th>Adres</th>
+      <th>Doel</th>
+      <th>Omschrijving</th>
+      <th>Website</th>
+      <th>Image</th>
+      <th>Contact</th>
+      <th>Email</th>
+      <th>Phonenumber</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.name %></td>
+        <td><%= project.country %></td>
+        <td><%= project.location %></td>
+        <td><%= project.address %></td>
+        <td><%= project.goal %></td>
+        <td><%= project.description %></td>
+        <td> <a href = <%= project.website %> target=_blank >project website</a></td>
+        <td><%= image_tag project.image unless project.image.nil? %></td>
+        <td><%= project.contact %></td>
+        <td><%= project.email %></td>
+        <td><%= project.phonenumber %></td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project', new_project_path %>
