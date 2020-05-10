@@ -1,6 +1,8 @@
 class ContributorsController < ApplicationController
   before_action :set_contributor, only: [:show, :edit, :update, :destroy]
 
+  access all: [:show, :index], user: [:destroy, :new, :create, :update, :edit], site_admin: :all
+
   # GET /contributors
   # GET /contributors.json
   def index

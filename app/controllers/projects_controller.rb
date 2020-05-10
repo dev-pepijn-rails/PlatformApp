@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
+  access all: [:show, :index], user: [:destroy, :new, :create, :update, :edit], site_admin: :all
+
   # GET /projects
   # GET /projects.json
   def index

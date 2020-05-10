@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p><%= link_to "terug naar homepagina", root_path %></p>
-
 <h1>Projecten</h1>
 
 <table>
@@ -37,8 +35,8 @@
         <td><%= project.email %></td>
         <td><%= project.phonenumber %></td>
         <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) if current_user %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } if current_user %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,4 +44,4 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to 'New Project', new_project_path if current_user %>
