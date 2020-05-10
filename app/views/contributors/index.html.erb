@@ -31,8 +31,8 @@
         <td><%= contributor.picture %></td>
         <td><a href = <%= contributor.Linkedin_profile %> target=_blank>Linkedin profiel</a></td>
         <td><%= link_to 'Show', contributor %></td>
-        <td><%= link_to 'Edit', edit_contributor_path(contributor) if current_user %></td>
-        <td><%= link_to 'Destroy', contributor, method: :delete, data: { confirm: 'Are you sure?' } if current_user %></td>
+        <td><%= link_to 'Edit', edit_contributor_path(contributor) if current_user && contributor.user.id == current_user.id %></td>
+        <td><%= link_to 'Destroy', contributor, method: :delete, data: { confirm: 'Are you sure?' } if current_user && contributor.user.id == current_user.id %></td>
       </tr>
     <% end %>
   </tbody>

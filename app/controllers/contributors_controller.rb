@@ -26,7 +26,7 @@ class ContributorsController < ApplicationController
   # POST /contributors
   # POST /contributors.json
   def create
-    @contributor = Contributor.new(contributor_params)
+    @contributor = Contributor.new(contributor_params.merge(user_id: current_user.id))
 
     respond_to do |format|
       if @contributor.save
@@ -71,6 +71,6 @@ class ContributorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def contributor_params
-      params.require(:contributor).permit(:name, :country, :location, :personal_description, :possible_contribution, :email, :phonenumber, :picture, :Linkedin_profile)
+      params.require(:contributor).permit(:name, :country, :location, :personal_description, :possible_contribution, :email, :phonenumber, :picture, :Linkedin_profile, :user_id)
     end
 end

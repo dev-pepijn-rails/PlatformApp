@@ -45,5 +45,5 @@
   <%= @contributor.Linkedin_profile %>
 </p>
 
-<%= link_to 'Edit', edit_contributor_path(@contributor) if current_user %> |
+<%= link_to 'Edit', edit_contributor_path(@contributor) if current_user && @contributor.user.id == current_user.id %> |
 <%= link_to 'Back', contributors_path %>
