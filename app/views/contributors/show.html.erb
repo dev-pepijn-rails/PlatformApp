@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @contributor.name %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @contributor.country %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @contributor.location %>
+</p>
+
+<p>
+  <strong>Personal description:</strong>
+  <%= @contributor.personal_description %>
+</p>
+
+<p>
+  <strong>Possible contribution:</strong>
+  <%= @contributor.possible_contribution %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @contributor.email %>
+</p>
+
+<p>
+  <strong>Phonenumber:</strong>
+  <%= @contributor.phonenumber %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @contributor.picture %>
+</p>
+
+<p>
+  <strong>Linkedin profile:</strong>
+  <%= @contributor.Linkedin_profile %>
+</p>
+
+<%= link_to 'Edit', edit_contributor_path(@contributor) if current_user && @contributor.user.id == current_user.id %> |
+<%= link_to 'Back', contributors_path %>

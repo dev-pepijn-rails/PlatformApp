@@ -7,9 +7,29 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+  
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+
+    <div class="header-section">
+
+      <div class="nav-header">
+          <%= render "shared/nav", location: 'top' %>
+      </div>
+      
+      <div class="login_helper">
+             <%= login_helper %>
+      </div>
+      
+    </div>
+
+
     <%= yield %>
+
   </body>
 </html>

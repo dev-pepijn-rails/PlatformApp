@@ -1,0 +1,62 @@
+<%= form_with(model: contributor, local: true) do |form| %>
+  <% if contributor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contributor.errors.count, "error") %> prohibited this contributor from being saved:</h2>
+
+      <ul>
+        <% contributor.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :personal_description %>
+    <%= form.text_area :personal_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :possible_contribution %>
+    <%= form.text_area :possible_contribution %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phonenumber %>
+    <%= form.text_field :phonenumber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.text_field :picture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Linkedin_profile %>
+    <%= form.text_field :Linkedin_profile %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
